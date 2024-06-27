@@ -1,0 +1,29 @@
+git
+- mostra todos os comandos disponíveis
+
+cd "pasta"
+C:\GameDev\Godot\Ilha Machado Demo
+- vai para uma pasta
+
+dir
+- mostra todas as subpastas da pasta atual
+
+git init
+- inicia a pasta como um projeto git
+
+git status
+- mostra o status do projeto
+
+git add .
+-adiciona todos os arquivos da pasta ao projeto
+
+git commit -m "mensagem"
+-cria um commt com os arquivos atuais
+
+git push
+-coloa o commit no GitHub
+
+git branch "new-feature"
+git checkout "new-feature"
+- cria um novo branch para não trabalhar no principal
+obs.: use commit e push apos para salvar
