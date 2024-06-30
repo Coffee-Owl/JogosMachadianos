@@ -12,7 +12,7 @@ position = Vector2(575, 324)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_ehbin")
 
-[node name="Lojinha" type="Sprite2D" parent="." node_paths=PackedStringArray("areaDisplay")]
+[node name="Lojinha1" type="Sprite2D" parent="." node_paths=PackedStringArray("areaDisplay")]
 position = Vector2(242, 339)
 scale = Vector2(0.0712963, 0.0712963)
 texture = ExtResource("2_spdda")
@@ -20,11 +20,10 @@ script = ExtResource("3_60pf0")
 areaDisplay = NodePath(".")
 nextScene = ExtResource("4_pvuic")
 
-[node name="Area2D" type="Area2D" parent="Lojinha"]
+[node name="Area2D" type="Area2D" parent="Lojinha1"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Lojinha/Area2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Lojinha1/Area2D"]
 polygon = PackedVector2Array(-504.936, 294.545, -490.909, -70.1304, -603.117, -70.1304, -42.0781, -350.65, 518.961, -70.1304, 392.727, -70.1304, 392.727, 294.545)
 
-[connection signal="input_event" from="Lojinha/Area2D" to="Lojinha" method="_on_area_2d_input_event"]
-[connection signal="mouse_entered" from="Lojinha/Area2D" to="Lojinha" method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Lojinha/Area2D" to="Lojinha" method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="Lojinha1/Area2D" to="Lojinha1" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Lojinha1/Area2D" to="Lojinha1" method="_on_area_2d_mouse_exited"]
