@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://5bg2emmi1ra0"]
+[gd_scene load_steps=5 format=3 uid="uid://5bg2emmi1ra0"]
 
 [ext_resource type="Texture2D" uid="uid://b05hb7sgw0s6" path="res://assets/ilha_machado.png" id="1_ehbin"]
 [ext_resource type="PackedScene" uid="uid://lgq4uubfd7ij" path="res://objects/point_and_click_obj.tscn" id="2_nf3fe"]
 [ext_resource type="Texture2D" uid="uid://bghwhtyt204y8" path="res://assets/lojinha1.png" id="2_spdda"]
+[ext_resource type="Texture2D" uid="uid://cxluao06a74uk" path="res://assets/doca.png" id="4_il7bt"]
 
 [node name="CityMap" type="Node2D"]
 
@@ -19,4 +20,14 @@ area_display = NodePath(".")
 [node name="CollisionPolygon2D" parent="Lojinha/Area2D" index="0"]
 polygon = PackedVector2Array(-490.91, 294.546, -490.91, -70.1299, -603.117, -70.1299, -42.0781, -350.649, 518.961, -70.1299, 378.701, -70.1299, 378.701, 294.546)
 
+[node name="Doca" parent="." node_paths=PackedStringArray("area_display") instance=ExtResource("2_nf3fe")]
+position = Vector2(637, 530)
+scale = Vector2(0.138918, 0.14966)
+texture = ExtResource("4_il7bt")
+area_display = NodePath(".")
+
+[node name="CollisionPolygon2D" parent="Doca/Area2D" index="0"]
+polygon = PackedVector2Array(-511.094, 167.045, -511.094, 13.3635, -7.19873, -260.591, 511.093, 26.7271, 511.093, 193.772, 64.7861, 440.999, 0, 440.999)
+
 [editable path="Lojinha"]
+[editable path="Doca"]
