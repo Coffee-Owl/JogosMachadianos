@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://lgq4uubfd7ij"]
+
+[ext_resource type="Script" path="res://scenes/point_and_click_obj.gd" id="1_ivar3"]
+[ext_resource type="PackedScene" uid="uid://547l8ices430" path="res://scenes/start.tscn" id="2_1hvhf"]
+
+[node name="PointAndClickObj" type="Sprite2D" node_paths=PackedStringArray("area_display")]
+position = Vector2(242, 339)
+scale = Vector2(0.0712963, 0.0712963)
+script = ExtResource("1_ivar3")
+area_display = NodePath("")
+next_scene = ExtResource("2_1hvhf")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

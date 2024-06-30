@@ -1,21 +1,25 @@
 extends Sprite2D
 
-@export var areaDisplay : Sprite2D
-@export var nextScene : PackedScene
-var defaultColor := Color(255 / 255, 255 / 255, 255 / 255, 255 / 255)
-var hoverColor := Color(0.8, 0, 0, 220)
-var mouseInArea := false
+@export var area_display : Sprite2D
+@export var next_scene : PackedScene
+var default_color := Color(1, 1, 1, 1)
+var hover_color := Color(0.8, 0, 0, 0.8)
+var mouse_in_area := false
 
 func _ready():
-	areaDisplay.modulate = defaultColor
+	area_display.modulate = default_color
+
 
 func _on_area_2d_mouse_entered():
-	print ("entrou")
-	areaDisplay.modulate = hoverColor
-	mouseInArea = true
+	area_display.modulate = hover_color
+	mouse_in_area = true
 
 
 func _on_area_2d_mouse_exited():
-	print ("saiu")
-	areaDisplay.modulate = defaultColor
-	mouseInArea = false
+	area_display.modulate = default_color
+	mouse_in_area = false
+
+
+func _on_area_2d_input_event(_viewport, event, _shape_idx):
+	if event.is_action_pressed("mouse_left") and mouse_in_area:
+		get_tree().change_scene_to_packed(next_scene)

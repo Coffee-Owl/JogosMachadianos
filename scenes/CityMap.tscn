@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://5bg2emmi1ra0"]
+[gd_scene load_steps=4 format=3 uid="uid://5bg2emmi1ra0"]
 
 [ext_resource type="Texture2D" uid="uid://b05hb7sgw0s6" path="res://assets/ilha_machado.png" id="1_ehbin"]
+[ext_resource type="PackedScene" uid="uid://lgq4uubfd7ij" path="res://objects/point_and_click_obj.tscn" id="2_nf3fe"]
 [ext_resource type="Texture2D" uid="uid://bghwhtyt204y8" path="res://assets/lojinha1.png" id="2_spdda"]
-[ext_resource type="Script" path="res://scenes/point_and_click_obj.gd" id="3_60pf0"]
-[ext_resource type="PackedScene" uid="uid://547l8ices430" path="res://scenes/start.tscn" id="4_pvuic"]
 
 [node name="CityMap" type="Node2D"]
 
@@ -12,18 +11,12 @@ position = Vector2(575, 324)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_ehbin")
 
-[node name="Lojinha1" type="Sprite2D" parent="." node_paths=PackedStringArray("areaDisplay")]
-position = Vector2(242, 339)
-scale = Vector2(0.0712963, 0.0712963)
+[node name="Lojinha" parent="." node_paths=PackedStringArray("area_display") instance=ExtResource("2_nf3fe")]
+position = Vector2(236, 345)
 texture = ExtResource("2_spdda")
-script = ExtResource("3_60pf0")
-areaDisplay = NodePath(".")
-nextScene = ExtResource("4_pvuic")
+area_display = NodePath(".")
 
-[node name="Area2D" type="Area2D" parent="Lojinha1"]
+[node name="CollisionPolygon2D" parent="Lojinha/Area2D" index="0"]
+polygon = PackedVector2Array(-490.91, 294.546, -490.91, -70.1299, -603.117, -70.1299, -42.0781, -350.649, 518.961, -70.1299, 378.701, -70.1299, 378.701, 294.546)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Lojinha1/Area2D"]
-polygon = PackedVector2Array(-504.936, 294.545, -490.909, -70.1304, -603.117, -70.1304, -42.0781, -350.65, 518.961, -70.1304, 392.727, -70.1304, 392.727, 294.545)
-
-[connection signal="mouse_entered" from="Lojinha1/Area2D" to="Lojinha1" method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Lojinha1/Area2D" to="Lojinha1" method="_on_area_2d_mouse_exited"]
+[editable path="Lojinha"]
