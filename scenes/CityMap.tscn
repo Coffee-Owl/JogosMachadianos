@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://5bg2emmi1ra0"]
+[gd_scene load_steps=7 format=3 uid="uid://5bg2emmi1ra0"]
 
 [ext_resource type="Texture2D" uid="uid://b05hb7sgw0s6" path="res://assets/ilha_machado.png" id="1_ehbin"]
 [ext_resource type="PackedScene" uid="uid://lgq4uubfd7ij" path="res://objects/point_and_click_obj.tscn" id="2_nf3fe"]
 [ext_resource type="Texture2D" uid="uid://bghwhtyt204y8" path="res://assets/lojinha1.png" id="2_spdda"]
 [ext_resource type="Texture2D" uid="uid://cxluao06a74uk" path="res://assets/doca.png" id="4_il7bt"]
 [ext_resource type="Script" path="res://scripts/dialogic_starter.gd" id="5_gooft"]
+[ext_resource type="Texture2D" uid="uid://us1jfe44438m" path="res://assets/AtributeBox.png" id="6_8fn5g"]
 
 [node name="CityMap" type="Node2D"]
 
@@ -32,6 +33,38 @@ area_display = NodePath(".")
 
 [node name="CollisionPolygon2D" parent="Doca/Area2D" index="0"]
 polygon = PackedVector2Array(-511.094, 167.045, -511.094, 13.3635, -7.19873, -260.591, 511.093, 26.7271, 511.093, 193.772, 64.7861, 440.999, 0, 440.999)
+
+[node name="PlayerAtributes" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AtributesBox" type="Sprite2D" parent="PlayerAtributes"]
+position = Vector2(1024, 272)
+scale = Vector2(1.03035, 1.03035)
+texture = ExtResource("6_8fn5g")
+
+[node name="Label" type="Label" parent="PlayerAtributes"]
+offset_left = 966.0
+offset_top = 16.0
+offset_right = 1085.0
+offset_bottom = 403.0
+text = "Atributos:
+Mentais:
+•Lógica
+•Conhecimento
+•Criatividade
+
+Físicos:
+•Força
+•Agilidade
+•Resistência
+
+Sociais:
+•Empatia
+•Carisma
+•Moral"
 
 [editable path="Lojinha"]
 [editable path="Doca"]
