@@ -4,9 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://lgq4uubfd7ij" path="res://objects/point_and_click_obj.tscn" id="2_nf3fe"]
 [ext_resource type="Texture2D" uid="uid://bghwhtyt204y8" path="res://assets/lojinha1.png" id="2_spdda"]
 [ext_resource type="Texture2D" uid="uid://cxluao06a74uk" path="res://assets/doca.png" id="4_il7bt"]
-[ext_resource type="Script" path="res://scripts/DialogicStarter.gd" id="5_gooft"]
+[ext_resource type="Script" path="res://scripts/dialogic_starter.gd" id="5_gooft"]
 
 [node name="CityMap" type="Node2D"]
+
+[node name="DialogicStarter" type="Node2D" parent="."]
+script = ExtResource("5_gooft")
 
 [node name="IlhaMachado" type="Sprite2D" parent="."]
 position = Vector2(575, 324)
@@ -29,9 +32,6 @@ area_display = NodePath(".")
 
 [node name="CollisionPolygon2D" parent="Doca/Area2D" index="0"]
 polygon = PackedVector2Array(-511.094, 167.045, -511.094, 13.3635, -7.19873, -260.591, 511.093, 26.7271, 511.093, 193.772, 64.7861, 440.999, 0, 440.999)
-
-[node name="DialogicStarter" type="Node2D" parent="."]
-script = ExtResource("5_gooft")
 
 [editable path="Lojinha"]
 [editable path="Doca"]

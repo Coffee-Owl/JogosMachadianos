@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://lgq4uubfd7ij"]
 
 [ext_resource type="Script" path="res://scripts/point_and_click_obj.gd" id="1_ivar3"]
-[ext_resource type="PackedScene" uid="uid://547l8ices430" path="res://scenes/start.tscn" id="2_1hvhf"]
+[ext_resource type="PackedScene" uid="uid://547l8ices430" path="res://scenes/Start.tscn" id="2_1hvhf"]
 
 [node name="PointAndClickObj" type="Sprite2D" node_paths=PackedStringArray("area_display")]
 position = Vector2(242, 339)
