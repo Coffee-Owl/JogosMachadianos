@@ -1,8 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://bscuvpbbgs8es"]
+[gd_scene load_steps=4 format=3 uid="uid://bscuvpbbgs8es"]
 
 [ext_resource type="Texture2D" uid="uid://cwl5oks01w3mj" path="res://images/Blackscreen.png" id="1_sk0ah"]
+[ext_resource type="PackedScene" uid="uid://dusc1xnnnyciw" path="res://objects/dialogic_manager.tscn" id="2_2yfcs"]
+[ext_resource type="PackedScene" uid="uid://5bg2emmi1ra0" path="res://scenes/CityMap.tscn" id="2_a584h"]
 
 [node name="InicioBeta" type="Node2D"]
+
+[node name="DialogicManager" parent="." instance=ExtResource("2_2yfcs")]
+dialog_to_start = "inicio"
+next_scene = ExtResource("2_a584h")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(513, 281)

@@ -22,9 +22,11 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
-"Galo": "res://characters/Galo.dch"
+"Galo": "res://characters/Galo.dch",
+"Paviel": "res://timelines/Paviel.dch"
 }
 directories/dtl_directory={
+"banco1": "res://timelines/banco1.dtl",
 "inicio": "res://timelines/inicio.dtl",
 "timelineTeste": "res://timelines/timelineTeste.dtl"
 }

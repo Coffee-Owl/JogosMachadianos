@@ -1,0 +1,12 @@
+join Galo 1
+Você entra no luxuoso escritório de Paviel, o banqueiro. O ambiente é decorado com penas coloridas e elegantes móveis de madeira.
+join Paviel 0
+Galo: Bom dia, Sr. Paviel. Muito obrigado por me receber.
+Paviel: Bom dia, Sr. Galvão. Sente-se, por favor.
+Paviel: Espero que tenha chegado bem de viagem... Bom, sou um pássaro ocupado então vamos logo aos negócios.
+Paviel: Nunca me contou o motivo da sua divida, Sr. Galvão.
+Galo: Minha dívida...
+- Minha irmã está doente... (+2 Empatia -1 Resistência)
+- Perdi tudo em uma aposta... (+1 Carisma +1 Conhecimento -1 Lógica)
+- Minha empresa faliu... (+1 Criatividade +1 Empatia - 1 Agilidade
+- Prefiro não comentar... (+2 Lógica +1 Força -1 Moral -1 Empatia )

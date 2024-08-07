@@ -5,10 +5,10 @@
 
 [node name="Banco" type="Node2D"]
 
+[node name="DialogicManager" parent="." instance=ExtResource("2_qr6ks")]
+dialog_to_start = "banco1"
+
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(576.75, 332)
 scale = Vector2(0.856771, 0.856771)
 texture = ExtResource("1_jn8nd")
-
-[node name="DialogicStarter" parent="." instance=ExtResource("2_qr6ks")]
-position = Vector2(0, 3)
