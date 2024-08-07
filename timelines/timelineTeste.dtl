@@ -1,2 +1,4 @@
 join Galo 1
 Galo: Teste
+[signal arg="logica"]
+[signal arg="1"]

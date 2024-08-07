@@ -1,16 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://5bg2emmi1ra0"]
+[gd_scene load_steps=8 format=3 uid="uid://5bg2emmi1ra0"]
 
+[ext_resource type="Script" path="res://scripts/player_resources.gd" id="1_2vb62"]
 [ext_resource type="Texture2D" uid="uid://b05hb7sgw0s6" path="res://assets/ilha_machado.png" id="1_ehbin"]
 [ext_resource type="PackedScene" uid="uid://lgq4uubfd7ij" path="res://objects/point_and_click_obj.tscn" id="2_nf3fe"]
+[ext_resource type="PackedScene" uid="uid://dusc1xnnnyciw" path="res://objects/dialogic_starter.tscn" id="2_qcah5"]
 [ext_resource type="Texture2D" uid="uid://bghwhtyt204y8" path="res://assets/lojinha1.png" id="2_spdda"]
 [ext_resource type="Texture2D" uid="uid://cxluao06a74uk" path="res://assets/doca.png" id="4_il7bt"]
-[ext_resource type="Script" path="res://scripts/dialogic_starter.gd" id="5_gooft"]
 [ext_resource type="Texture2D" uid="uid://us1jfe44438m" path="res://assets/AtributeBox.png" id="6_8fn5g"]
 
 [node name="CityMap" type="Node2D"]
 
-[node name="DialogicStarter" type="Node2D" parent="."]
-script = ExtResource("5_gooft")
+[node name="PlayerResources" type="Node2D" parent="."]
+script = ExtResource("1_2vb62")
+
+[node name="DialogicStarter" parent="." instance=ExtResource("2_qcah5")]
 
 [node name="IlhaMachado" type="Sprite2D" parent="."]
 position = Vector2(575, 324)
@@ -46,6 +49,7 @@ scale = Vector2(1.03035, 1.03035)
 texture = ExtResource("6_8fn5g")
 
 [node name="Label" type="Label" parent="PlayerAtributes"]
+layout_mode = 0
 offset_left = 966.0
 offset_top = 16.0
 offset_right = 1085.0
