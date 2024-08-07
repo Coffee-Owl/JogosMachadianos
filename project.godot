@@ -25,6 +25,7 @@ directories/dch_directory={
 "Galo": "res://characters/Galo.dch"
 }
 directories/dtl_directory={
+"inicio": "res://timelines/inicio.dtl",
 "timelineTeste": "res://timelines/timelineTeste.dtl"
 }
 layout/style_list=[]

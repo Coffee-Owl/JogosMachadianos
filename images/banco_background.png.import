@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://us1jfe44438m"
-path="res://.godot/imported/AtributeBox.png-e330454e150ec4a79f1455a0957235c1.ctex"
+uid="uid://dfnnkkincpwhc"
+path="res://.godot/imported/banco_background.png-ed252cf08934758f96bd550944de7d3d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/AtributeBox.png"
-dest_files=["res://.godot/imported/AtributeBox.png-e330454e150ec4a79f1455a0957235c1.ctex"]
+source_file="res://images/banco_background.png"
+dest_files=["res://.godot/imported/banco_background.png-ed252cf08934758f96bd550944de7d3d.ctex"]
 
 [params]
 

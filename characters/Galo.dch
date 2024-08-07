@@ -17,7 +17,7 @@
 "portraits": {
 "Padrao": {
 "export_overrides": {
-"image": "\"res://assets/galo.png\""
+"image": "\"res://images/galo.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

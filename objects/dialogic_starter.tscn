@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dusc1xnnnyciw"]
-
-[ext_resource type="Script" path="res://scripts/dialogic_starter.gd" id="1_xbcim"]
-
-[node name="DialogicStarter" type="Node2D"]
-script = ExtResource("1_xbcim")

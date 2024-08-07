@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bghwhtyt204y8"
-path="res://.godot/imported/lojinha1.png-22b7386ef4b1032d93ce8f6d2aad85d1.ctex"
+uid="uid://b05hb7sgw0s6"
+path="res://.godot/imported/ilha_machado.png-6ba8b9fccc6af15cca3a228018adf348.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/lojinha1.png"
-dest_files=["res://.godot/imported/lojinha1.png-22b7386ef4b1032d93ce8f6d2aad85d1.ctex"]
+source_file="res://images/ilha_machado.png"
+dest_files=["res://.godot/imported/ilha_machado.png-6ba8b9fccc6af15cca3a228018adf348.ctex"]
 
 [params]
 
