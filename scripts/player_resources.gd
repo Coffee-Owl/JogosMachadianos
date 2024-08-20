@@ -1,4 +1,5 @@
 extends Node
+var a = 1
 
 var atribute_dic = {
 	"logica" : 0,
