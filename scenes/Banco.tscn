@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://7qqbhbu6h6po"]
+[gd_scene load_steps=4 format=3 uid="uid://7qqbhbu6h6po"]
 
 [ext_resource type="Texture2D" uid="uid://dfnnkkincpwhc" path="res://images/banco_background.png" id="1_jn8nd"]
 [ext_resource type="PackedScene" uid="uid://dusc1xnnnyciw" path="res://objects/dialogic_manager.tscn" id="2_qr6ks"]
+[ext_resource type="PackedScene" uid="uid://bu7hnaxljkcne" path="res://objects/player_atributes.tscn" id="3_tar30"]
 
 [node name="Banco" type="Node2D"]
 
@@ -9,6 +10,8 @@
 dialog_to_start = "banco1"
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(576.75, 332)
+position = Vector2(576, 329)
 scale = Vector2(0.856771, 0.856771)
 texture = ExtResource("1_jn8nd")
+
+[node name="PlayerAtributes" parent="." instance=ExtResource("3_tar30")]

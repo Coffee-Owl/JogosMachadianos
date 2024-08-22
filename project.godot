@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Ilha Machado Demo"
-run/main_scene="res://scenes/CityMap.tscn"
+run/main_scene="res://scenes/TelaDeInicio.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
@@ -23,17 +23,23 @@ PlayerResources="*res://scripts/player_resources.gd"
 [dialogic]
 
 directories/dch_directory={
-"Galo": "res://characters/Galo.dch",
-"Paviel": "res://timelines/Paviel.dch"
+"Paon": "res://characters/Paon.dch",
+"Player": "res://characters/Player.dch"
 }
 directories/dtl_directory={
 "banco1": "res://timelines/banco1.dtl",
+"beta01": "res://timelines/beta01.dtl",
 "inicio": "res://timelines/inicio.dtl",
 "timelineTeste": "res://timelines/timelineTeste.dtl"
 }
-layout/style_list=[]
-layout/default_style="Default"
-variables={}
+layout/style_list=["res://images/DialogicStyle.tres"]
+layout/default_style="res://images/DialogicStyle.tres"
+variables={
+"dice_value": 0,
+"player_name": "Player",
+"player_profession": "",
+"tomou_cafe": false
+}
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true

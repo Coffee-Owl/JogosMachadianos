@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://bu7hnaxljkcne"]
+
+[ext_resource type="Script" path="res://scripts/resources_panel.gd" id="1_2wtoh"]
+
+[node name="PlayerAtributes" type="Control" node_paths=PackedStringArray("resources_label")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_2wtoh")
+resources_label = NodePath("Label")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 940.0
+offset_top = -29.0
+offset_right = 1227.0
+offset_bottom = 689.0
+color = Color(0.176471, 0.176471, 0.254902, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 947.0
+offset_top = 5.0
+offset_right = 1066.0
+offset_bottom = 392.0
+text = "Atributos:
+Mentais:
+•Lógica
+•Conhecimento
+•Criatividade
+
+Físicos:
+•Força
+•Agilidade
+•Resistência
+
+Sociais:
+•Empatia
+•Carisma
+•Moral"

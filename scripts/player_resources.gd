@@ -1,6 +1,7 @@
 extends Node
-var a = 1
 
+var player_name = "Player"
+var profession = ""
 var atribute_dic = {
 	"logica" : 0,
  	"conhecimento" : 0,
@@ -12,13 +13,44 @@ var atribute_dic = {
 	"carisma" : 0,
 	"moral" : 0,
 }
-var dice_value : int
 
 func _ready():
 	Dialogic.signal_event.connect(rollDice)
+	Dialogic.signal_event.connect(changeAtribute)
+	Dialogic.signal_event.connect(changePlayerName)
+	Dialogic.signal_event.connect(changePlayerProfession)
+	
+func rollDice(command):
+	var trigger = command.get_slice(" ", 0)
+	var atribute_in_use = command.get_slice(" ", 1)
+	if trigger == "roll":
+		var dice_value = 1 + (randi()%10)
+		for atribute in atribute_dic.keys():
+			if atribute_in_use == atribute:
+				dice_value += atribute_dic[atribute]
+				Dialogic.VAR.dice_value = dice_value
+			
+func changeAtribute(command):
+	var trigger = command.get_slice(" ", 0)
+	var atribute_in_use = command.get_slice(" ", 1)
+	var ammount_to_change = command.get_slice(" ", 2)
+	if trigger == "increase_att":
+		for atribute in atribute_dic.keys():
+			if atribute_in_use == atribute:
+				atribute_dic[atribute] =+ int(ammount_to_change)
+	elif trigger == "decrease_att":
+		for atribute in atribute_dic.keys():
+			if atribute_in_use == atribute:
+				atribute_dic[atribute] =- int(ammount_to_change)
+				
+func changePlayerName(command):
+	var trigger = command.get_slice(" ", 0)
+	if trigger == "change_name":
+		player_name = Dialogic.VAR.player_name
 
-func rollDice(atribute_in_use):
-	dice_value = 1 + (randi()%20)
-	for atribute in atribute_dic.keys():
-		if atribute_in_use == atribute:
-			dice_value += atribute_dic[atribute]
+func changePlayerProfession(command):
+	var trigger = command.get_slice(" ", 0)
+	if trigger == "change_profession":
+		profession = Dialogic.VAR.player_profession
+
+

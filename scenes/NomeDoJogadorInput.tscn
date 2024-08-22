@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5pefw2yyysow"]
+
+[ext_resource type="Script" path="res://scripts/player_resources.gd" id="1_a1yls"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1vigy"]
+font_size = 30
+
+[node name="NomeDoJogadorInput" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1162.0
+offset_bottom = 656.0
+color = Color(0.239216, 0.239216, 0.313726, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_left = 309.0
+offset_top = 191.0
+offset_right = 859.0
+offset_bottom = 231.0
+
+[node name="LineEdit1" type="LineEdit" parent="CenterContainer"]
+layout_mode = 2
+placeholder_text = "Galvão"
+alignment = 1
+expand_to_text_length = true
+clear_button_enabled = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 331.0
+offset_top = 109.0
+offset_right = 830.0
+offset_bottom = 151.0
+text = "Insira o nome do seu personagem:"
+label_settings = SubResource("LabelSettings_1vigy")
+
+[node name="PlayerResources" type="Node" parent="."]
+script = ExtResource("1_a1yls")
+
+[connection signal="text_submitted" from="CenterContainer/LineEdit1" to="PlayerResources" method="_on_line_edit_1_text_submitted"]

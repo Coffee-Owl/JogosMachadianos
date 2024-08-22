@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxqp51hmf54tk"]
+
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_4ehph"]
+[ext_resource type="PackedScene" uid="uid://bscuvpbbgs8es" path="res://scenes/InicioBeta.tscn" id="2_svaf8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gooso"]
+font_size = 30
+
+[node name="TelaDeInicio" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4ehph")
+next_scene = ExtResource("2_svaf8")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 647.0
+color = Color(0.176471, 0.176471, 0.254902, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="ColorRect"]
+offset_left = 326.0
+offset_top = 55.0
+offset_right = 873.0
+offset_bottom = 187.0
+
+[node name="Label" type="Label" parent="ColorRect/CenterContainer"]
+layout_mode = 2
+text = "Jogos Machadianos"
+label_settings = SubResource("LabelSettings_gooso")
+horizontal_alignment = 1

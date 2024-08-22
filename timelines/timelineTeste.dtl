@@ -1,4 +1,5 @@
 join Galo 1
 Galo: Teste
-[signal arg="logica"]
-[signal arg="1"]
+[signal arg="increase_att conhecimento 10"]
+[signal arg="roll conhecimento"]
+você rolou {dice_value}

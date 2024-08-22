@@ -8,21 +8,21 @@
 "sound_moods": {},
 "style": ""
 },
-"default_portrait": "Padrão",
+"default_portrait": "Padrao",
 "description": "",
-"display_name": "Paviel",
+"display_name": "{player_name}",
 "mirror": false,
 "nicknames": [""],
 "offset": Vector2(0, 0),
 "portraits": {
-"Padrão": {
+"Padrao": {
 "export_overrides": {
-"image": "\"res://images/banqueiro.png\""
+"image": "\"res://images/galo.png\""
 },
 "ignore_char_scale": false,
 "mirror": false,
-"offset": Vector2(700, 600),
-"scale": 2.0,
+"offset": Vector2(0, 0),
+"scale": 0.7,
 "scene": ""
 }
 },
