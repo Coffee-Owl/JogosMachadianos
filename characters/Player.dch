@@ -24,6 +24,15 @@
 "offset": Vector2(0, 0),
 "scale": 0.7,
 "scene": ""
+},
+"PadraoDescolorido": {
+"export_overrides": {
+"image": "\"res://images/galo_uncolor.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 0.72,
+"scene": ""
 }
 },
 "scale": 1.0

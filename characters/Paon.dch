@@ -17,11 +17,20 @@
 "portraits": {
 "Padrao": {
 "export_overrides": {
-"image": "\"res://images/banqueiro.png\""
+"image": "\"res://images/paon1.png\""
 },
-"mirror": false,
-"offset": Vector2(500, 350),
-"scale": 1.2,
+"mirror": true,
+"offset": Vector2(0, 0),
+"scale": 0.8,
+"scene": ""
+},
+"PadraoDescolorido": {
+"export_overrides": {
+"image": "\"res://images/paon1_uncolor.png\""
+},
+"mirror": true,
+"offset": Vector2(0, 0),
+"scale": 0.8,
 "scene": ""
 }
 },

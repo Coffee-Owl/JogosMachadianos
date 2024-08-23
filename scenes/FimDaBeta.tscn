@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b3embpj5dh3je"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_tkv08"]
-[ext_resource type="PackedScene" uid="uid://cxqp51hmf54tk" path="res://scenes/TelaDeInicio.tscn" id="2_a3i8e"]
+[ext_resource type="PackedScene" uid="uid://cxqp51hmf54tk" path="res://scenes/TelaDeInicio.tscn" id="2_bjn88"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_82cr3"]
 font_size = 30
@@ -14,7 +14,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tkv08")
-next_scene = ExtResource("2_a3i8e")
+next_scene = ExtResource("2_bjn88")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
