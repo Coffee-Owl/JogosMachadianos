@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://cvkmbmya2hj0q"]
+[gd_scene load_steps=3 format=3 uid="uid://cvkmbmya2hj0q"]
 
 [ext_resource type="Texture2D" uid="uid://ccr2tmf0rbnk" path="res://images/trabalho_verde.png" id="1_48c7u"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vk04m"]
+size = Vector2(154, 54)
+
 [node name="TrabalhoVerde" type="Sprite2D"]
 texture = ExtResource("1_48c7u")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_vk04m")

@@ -3,15 +3,9 @@ extends Node2D
 @export var selected_day : Sprite2D
 @export var day_label : Label
 
-var scene_to_instance = preload("res://objects/trabalho_verde.tscn")
-
 var time = 0
 var current_day = 1
 var continue_time = true
- 
-func instanceObject():
-	var object = scene_to_instance.instance()
-	call_deferred("add_child",object)
 
 func printDay(day_num):
 	match(day_num):
@@ -39,7 +33,6 @@ func menuTrabalhos(id):
 	match(id):
 		0:
 			print("verde")
-			instanceObject()
 		1:
 			print("azul")
 
