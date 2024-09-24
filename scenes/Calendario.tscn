@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=3 uid="uid://bpnwl0cguer7n"]
+
+[ext_resource type="Script" path="res://scripts/calendar.gd" id="1_lom2n"]
+[ext_resource type="Texture2D" uid="uid://cf7jc41vfiyk4" path="res://images/calendario.png" id="1_tafcd"]
+[ext_resource type="Texture2D" uid="uid://d42a3xithi4e" path="res://images/dia_selecionado.png" id="3_517w3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1qq1f"]
+font_color = Color(0.0470588, 0.0470588, 0.0470588, 1)
+
+[node name="Calendario" type="Node2D" node_paths=PackedStringArray("selected_day", "day_label")]
+script = ExtResource("1_lom2n")
+selected_day = NodePath("Calendario/DiaSelecionado")
+day_label = NodePath("Calendario/LabelDia")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 716.0
+offset_top = 193.0
+offset_right = 884.0
+offset_bottom = 446.0
+color = Color(0.47451, 0.47451, 0.47451, 1)
+
+[node name="ContinueButton" type="Button" parent="."]
+offset_left = 724.0
+offset_top = 408.0
+offset_right = 876.0
+offset_bottom = 439.0
+text = "Continuar Semana"
+
+[node name="MenuButtonTrabalhos" type="MenuButton" parent="."]
+offset_left = 719.0
+offset_top = 198.0
+offset_right = 881.0
+offset_bottom = 229.0
+text = "Selecionar Trabalho"
+flat = false
+item_count = 2
+popup/item_0/text = "Verde"
+popup/item_0/id = 0
+popup/item_1/text = "Azul"
+popup/item_1/id = 1
+
+[node name="Calendario" type="Sprite2D" parent="."]
+position = Vector2(524.5, 318.5)
+texture = ExtResource("1_tafcd")
+
+[node name="LabelMes" type="Label" parent="Calendario"]
+offset_left = -144.0
+offset_top = -109.0
+offset_right = 13.0
+offset_bottom = -86.0
+text = "Mês: 01"
+label_settings = SubResource("LabelSettings_1qq1f")
+
+[node name="LabelDia" type="Label" parent="Calendario"]
+offset_left = 21.0
+offset_top = -109.0
+offset_right = 161.0
+offset_bottom = -86.0
+text = "Dia: "
+label_settings = SubResource("LabelSettings_1qq1f")
+
+[node name="DiaSelecionado" type="Sprite2D" parent="Calendario"]
+position = Vector2(-150, -50)
+texture = ExtResource("3_517w3")
+
+[connection signal="pressed" from="ContinueButton" to="Calendario" method="_on_continue_button_pressed"]

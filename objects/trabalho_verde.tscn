@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvkmbmya2hj0q"]
+
+[ext_resource type="Texture2D" uid="uid://ccr2tmf0rbnk" path="res://images/trabalho_verde.png" id="1_48c7u"]
+
+[node name="TrabalhoVerde" type="Sprite2D"]
+texture = ExtResource("1_48c7u")

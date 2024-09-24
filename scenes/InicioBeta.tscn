@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bscuvpbbgs8es"]
+[gd_scene load_steps=4 format=3 uid="uid://bscuvpbbgs8es"]
 
 [ext_resource type="PackedScene" uid="uid://dusc1xnnnyciw" path="res://objects/dialogic_manager.tscn" id="2_2yfcs"]
-[ext_resource type="PackedScene" uid="uid://b3embpj5dh3je" path="res://scenes/FimDaBeta.tscn" id="2_y1y18"]
 [ext_resource type="Texture2D" uid="uid://dfnnkkincpwhc" path="res://images/banco_background.png" id="3_uxw73"]
 [ext_resource type="PackedScene" uid="uid://bu7hnaxljkcne" path="res://objects/player_atributes.tscn" id="4_2ixud"]
 
@@ -9,7 +8,6 @@
 
 [node name="DialogicManager" parent="." instance=ExtResource("2_2yfcs")]
 dialog_to_start = "beta01"
-next_scene = ExtResource("2_y1y18")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(465, 324)
