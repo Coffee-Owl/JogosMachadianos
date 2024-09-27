@@ -14,9 +14,7 @@ func _process(delta):
 
 
 func _on_area_2d_mouse_entered():
-	wait(1)
 	green_task00.set_visible(false)
 
 func _on_area_2d_mouse_exited():
-	wait(1)
 	green_task00.set_visible(true)
