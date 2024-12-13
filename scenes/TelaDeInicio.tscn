@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxqp51hmf54tk"]
+
+[ext_resource type="Script" path="res://scripts/scene_manager.gd" id="1_4ehph"]
+[ext_resource type="Texture2D" uid="uid://cx16vexnp65vb" path="res://images/logo.png" id="3_an3hd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gooso"]
+font_size = 30
+
+[node name="TelaDeInicio" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4ehph")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 647.0
+color = Color(0.176471, 0.176471, 0.254902, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="ColorRect"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 514.0
+offset_right = 1150.0
+offset_bottom = 646.0
+
+[node name="Label" type="Label" parent="ColorRect/CenterContainer"]
+layout_mode = 2
+text = "(Pressione qualquer tecla para começar)"
+label_settings = SubResource("LabelSettings_gooso")
+horizontal_alignment = 1
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(582, 307)
+scale = Vector2(0.196391, 0.196391)
+texture = ExtResource("3_an3hd")

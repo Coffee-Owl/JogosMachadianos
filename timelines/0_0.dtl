@@ -1,0 +1,26 @@
+[background arg="res://images/Blackscreen.png" fade="0.0"]
+Jornal: Está em busca de uma oportunidade que pode mudar a sua vida? Gostaria de ganhar bem e trabalhar pouco? Está afundado em dívidas e não sabe mais o que fazer? Conheça o paradisíaco e promissor Arquipélago de Machado!
+Jogador: …Sinceramente, quando li este classificado pela primeira vez, achei que era um golpe. Não é possível que alguém estaria tão desesperado ao ponto de cair numa coisa dessas.
+Jogador: Mas bem…
+Jogador: Eu estava.
+[background arg="res://images/galo_lendo_jornal.png" fade="0.0"]
+Jornal: Com apenas 1 ano, atraímos investidores estrangeiros de diversos lugares, e agora buscamos pessoas bem qualificadas para construir conosco um lugar ideal!
+Jornal: Gostaria de usufruir desta oportunidade única? Envie o seu currículo e uma carta de intenções para a caixa postal do Ovo de Ouro! Selecionaremos os candidatos mais promissores para uma viagem gratuita para conhecer a ilha.
+Jogador: O Ovo de Ouro é uma instituição bancária com uma boa reputação, conheço pessoas que trabalham lá. Não é possível que seja um golpe, afinal, pensei.
+Jogador: Mandei minha carta sem nenhuma expectativa. Falei do meu trabalho na universidade, e da minha dívida… Sinceramente nem achei que responderiam.
+Jogador: Para minha surpresa, uma semana depois, recebi um envelope com uma carta e uma passagem de barco, e agora, cá estou eu.
+[i]Você abre o envelope da carta enquanto ouve o som das ondas batendo no casco da balsa.[/i]
+Carta: Estamos lisonjeados por ter escolhido trabalhar conosco. Nós do Ovo de Ouro abraçamos sempre a oportunidade de captar talentos promissores para o desenvolvimento da nossa ilha.
+Carta: Junto a esta carta, o sr. recebeu também uma passagem. Ao chegar na nossa ilha, direcione-se ao Ovo de Ouro para preencher a adequada documentação e receber as chaves de seus aposentos.
+Jogador: Bem… Que sorte a minha.
+[i]O barulho das ondas te acalma, mas a maresia te deixa enjoado. A viagem é longa, e o tempo parece passar mais devagar.[/i]
+[i]Sua mente está à mil. O que será que te aguarda nesta ilha?[/i]
+- Que sono… vou descansar.
+	[i]Você encosta no banco e o balançar da balsa te deixa sonolento. Antes mesmo de você perceber, você encosta sua cabeça numa parede, e adormece.[/i]
+- Preciso me distrair, vou ler um livro.
+	[i]Para passar o tempo, você decide tirar um de seus romances favoritos de sua bolsa; o livro {nome_livro}. O tempo passa em um piscar de olhos.[/i]
+- Não é sempre que viajo de barco. Vou aproveitar a vista.
+	[i]Não há nada no horizonte a não ser água. Por horas e horas, você se afunda nos seus pensamentos enquanto aprecia a vastidão do oceano.[/i]
+[background arg="res://images/ilha_machado2_169.png" fade="0.0"]
+[i]A Balsa apita. Você chegou na Ilha. O lugar é tão bonito quanto disseram no anúncio… talvez mais. [/i]
+[i]Ao descer do barco, uma moça o cumprimenta e o leva até o banco.[/i]

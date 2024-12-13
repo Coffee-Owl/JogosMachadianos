@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://davla5o5gk5ka"]
+
+[ext_resource type="PackedScene" uid="uid://bu7hnaxljkcne" path="res://objects/player_atributes.tscn" id="1_gcu7f"]
+[ext_resource type="PackedScene" uid="uid://dusc1xnnnyciw" path="res://objects/dialogic_manager.tscn" id="2_2768c"]
+[ext_resource type="PackedScene" uid="uid://b3embpj5dh3je" path="res://scenes/FimDaBeta.tscn" id="3_pmmx3"]
+[ext_resource type="Texture2D" uid="uid://b3mu7pk1xkddi" path="res://images/quarto_background.jpg" id="4_5jlne"]
+
+[node name="Capitulo0Cena2" type="Node2D"]
+
+[node name="PlayerAtributes" parent="." instance=ExtResource("1_gcu7f")]
+
+[node name="DialogicManager" parent="." instance=ExtResource("2_2768c")]
+dialog_to_start = "0_2"
+scene_to_change = ExtResource("3_pmmx3")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(469, 176)
+scale = Vector2(0.367285, 0.367285)
+texture = ExtResource("4_5jlne")

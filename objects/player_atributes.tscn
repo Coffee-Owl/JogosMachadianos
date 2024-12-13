@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://bu7hnaxljkcne"]
+
+[ext_resource type="Script" path="res://scripts/resources_panel.gd" id="1_2wtoh"]
+[ext_resource type="Texture2D" uid="uid://cwl5oks01w3mj" path="res://images/Blackscreen.png" id="2_1w1yr"]
+
+[node name="PlayerAtributes" type="Control" node_paths=PackedStringArray("resources_label")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_2wtoh")
+resources_label = NodePath("AtributesLabel")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(1047.5, 327.5)
+scale = Vector2(0.111979, 0.613889)
+texture = ExtResource("2_1w1yr")
+
+[node name="AtributesLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 947.0
+offset_top = 5.0
+offset_right = 1066.0
+offset_bottom = 392.0
+text = "Nome: 
+Profissão:
+	
+Atributos
+	
+Mentais
+•Lógica: 
+•Conhecimento:
+•Criatividade: 
+
+Físicos
+•Força: 
+•Agilidade: 
+•Resistência: 
+
+Sociais
+•Empatia: 
+•Carisma: 
+•Moral: "

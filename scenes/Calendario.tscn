@@ -1,0 +1,149 @@
+[gd_scene load_steps=7 format=3 uid="uid://bpnwl0cguer7n"]
+
+[ext_resource type="Script" path="res://scripts/calendar.gd" id="1_lom2n"]
+[ext_resource type="Texture2D" uid="uid://cf7jc41vfiyk4" path="res://images/calendario.png" id="1_tafcd"]
+[ext_resource type="Texture2D" uid="uid://d42a3xithi4e" path="res://images/dia_selecionado.png" id="3_517w3"]
+[ext_resource type="Script" path="res://scripts/labels.gd" id="3_kfkxf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1qq1f"]
+font_color = Color(0.0470588, 0.0470588, 0.0470588, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e8sa7"]
+size = Vector2(145, 45)
+
+[node name="Calendario" type="Node2D" node_paths=PackedStringArray("selected_day", "day_label")]
+script = ExtResource("1_lom2n")
+selected_day = NodePath("CalendarioSprite/DiaSelecionado")
+day_label = NodePath("CalendarioSprite/Labels/LabelDia")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 716.0
+offset_top = 193.0
+offset_right = 884.0
+offset_bottom = 446.0
+color = Color(0.47451, 0.47451, 0.47451, 1)
+
+[node name="ContinueButton" type="Button" parent="."]
+offset_left = 724.0
+offset_top = 408.0
+offset_right = 876.0
+offset_bottom = 439.0
+text = "Continuar Semana"
+
+[node name="MenuButtonTrabalhos" type="MenuButton" parent="."]
+offset_left = 719.0
+offset_top = 198.0
+offset_right = 881.0
+offset_bottom = 229.0
+text = "Selecionar Trabalho"
+flat = false
+item_count = 2
+popup/item_0/text = "Verde"
+popup/item_0/id = 0
+popup/item_1/text = "Azul"
+popup/item_1/id = 1
+
+[node name="CalendarioSprite" type="Sprite2D" parent="."]
+position = Vector2(524.5, 318.5)
+texture = ExtResource("1_tafcd")
+
+[node name="Labels" type="Control" parent="CalendarioSprite"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_kfkxf")
+
+[node name="LabelMes" type="Label" parent="CalendarioSprite/Labels"]
+layout_mode = 0
+offset_left = 99.5
+offset_top = -110.0
+offset_right = 256.5
+offset_bottom = -87.0
+text = "Mês: 1"
+label_settings = SubResource("LabelSettings_1qq1f")
+
+[node name="LabelSemana" type="Label" parent="CalendarioSprite/Labels"]
+layout_mode = 0
+offset_left = -41.5
+offset_top = -110.0
+offset_right = 115.5
+offset_bottom = -87.0
+text = "Semana: 1"
+label_settings = SubResource("LabelSettings_1qq1f")
+
+[node name="LabelDia" type="Label" parent="CalendarioSprite/Labels"]
+layout_mode = 0
+offset_left = -164.5
+offset_top = -110.0
+offset_right = -24.5
+offset_bottom = -87.0
+text = "Dia: Segunda"
+label_settings = SubResource("LabelSettings_1qq1f")
+
+[node name="DiaSelecionado" type="Sprite2D" parent="CalendarioSprite"]
+z_index = 2
+position = Vector2(-150, -50)
+texture = ExtResource("3_517w3")
+
+[node name="Areas Para Deteccao" type="Node2D" parent="CalendarioSprite"]
+
+[node name="Area2D_00" type="Area2D" parent="CalendarioSprite/Areas Para Deteccao"]
+position = Vector2(-99.5, -50)
+
+[node name="CollisionShape2D_00" type="CollisionShape2D" parent="CalendarioSprite/Areas Para Deteccao/Area2D_00"]
+shape = SubResource("RectangleShape2D_e8sa7")
+
+[node name="Area2D_10" type="Area2D" parent="CalendarioSprite/Areas Para Deteccao"]
+position = Vector2(-100.5, 0.5)
+
+[node name="CollisionShape2D_10" type="CollisionShape2D" parent="CalendarioSprite/Areas Para Deteccao/Area2D_10"]
+shape = SubResource("RectangleShape2D_e8sa7")
+
+[node name="Area2D_20" type="Area2D" parent="CalendarioSprite/Areas Para Deteccao"]
+position = Vector2(-100, 50.5)
+
+[node name="CollisionShape2D_20" type="CollisionShape2D" parent="CalendarioSprite/Areas Para Deteccao/Area2D_20"]
+shape = SubResource("RectangleShape2D_e8sa7")
+
+[node name="Area2D_30" type="Area2D" parent="CalendarioSprite/Areas Para Deteccao"]
+position = Vector2(-100.5, 99.5)
+
+[node name="CollisionShape2D_30" type="CollisionShape2D" parent="CalendarioSprite/Areas Para Deteccao/Area2D_30"]
+shape = SubResource("RectangleShape2D_e8sa7")
+
+[node name="Area2D_01" type="Area2D" parent="CalendarioSprite/Areas Para Deteccao"]
+position = Vector2(49.5, -50.5)
+
+[node name="CollisionShape2D_01" type="CollisionShape2D" parent="CalendarioSprite/Areas Para Deteccao/Area2D_01"]
+shape = SubResource("RectangleShape2D_e8sa7")
+
+[node name="Area2D_11" type="Area2D" parent="CalendarioSprite/Areas Para Deteccao"]
+position = Vector2(50.5, 0.5)
+
+[node name="CollisionShape2D_11" type="CollisionShape2D" parent="CalendarioSprite/Areas Para Deteccao/Area2D_11"]
+shape = SubResource("RectangleShape2D_e8sa7")
+
+[node name="Area2D_21" type="Area2D" parent="CalendarioSprite/Areas Para Deteccao"]
+position = Vector2(50.5, 49.5)
+
+[node name="CollisionShape2D_21" type="CollisionShape2D" parent="CalendarioSprite/Areas Para Deteccao/Area2D_21"]
+shape = SubResource("RectangleShape2D_e8sa7")
+
+[node name="Area2D_31" type="Area2D" parent="CalendarioSprite/Areas Para Deteccao"]
+position = Vector2(49.5, 99.5)
+
+[node name="CollisionShape2D_31" type="CollisionShape2D" parent="CalendarioSprite/Areas Para Deteccao/Area2D_31"]
+shape = SubResource("RectangleShape2D_e8sa7")
+
+[connection signal="day_changed" from="." to="CalendarioSprite/Labels" method="_on_calendario_day_changed"]
+[connection signal="week_changed" from="." to="CalendarioSprite/Labels" method="_on_calendario_week_changed"]
+[connection signal="pressed" from="ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="mouse_entered" from="CalendarioSprite/Areas Para Deteccao/Area2D_00" to="." method="_on_area_2d_00_mouse_entered"]
+[connection signal="mouse_entered" from="CalendarioSprite/Areas Para Deteccao/Area2D_10" to="." method="_on_area_2d_10_mouse_entered"]
+[connection signal="mouse_entered" from="CalendarioSprite/Areas Para Deteccao/Area2D_20" to="." method="_on_area_2d_20_mouse_entered"]
+[connection signal="mouse_entered" from="CalendarioSprite/Areas Para Deteccao/Area2D_30" to="." method="_on_area_2d_30_mouse_entered"]
+[connection signal="mouse_entered" from="CalendarioSprite/Areas Para Deteccao/Area2D_01" to="." method="_on_area_2d_01_mouse_entered"]
+[connection signal="mouse_entered" from="CalendarioSprite/Areas Para Deteccao/Area2D_11" to="." method="_on_area_2d_11_mouse_entered"]
+[connection signal="mouse_entered" from="CalendarioSprite/Areas Para Deteccao/Area2D_21" to="." method="_on_area_2d_21_mouse_entered"]
+[connection signal="mouse_entered" from="CalendarioSprite/Areas Para Deteccao/Area2D_31" to="." method="_on_area_2d_31_mouse_entered"]

@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3embpj5dh3je"]
+
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_tkv08"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_82cr3"]
+font_size = 30
+
+[node name="FimDaBeta" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tkv08")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 647.0
+color = Color(0.176471, 0.176471, 0.254902, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_left = 297.0
+offset_top = 250.0
+offset_right = 844.0
+offset_bottom = 382.0
+
+[node name="Label" type="Label" parent="CenterContainer"]
+layout_mode = 2
+text = "Obrigado por jogar.
+Por enquanto esse é o final do jogo."
+label_settings = SubResource("LabelSettings_82cr3")
+horizontal_alignment = 1

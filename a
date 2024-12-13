@@ -1,0 +1,49 @@
+[33mcommit 06204c74ef105cc81ba73fd15651ef0f023b8920[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Yuri <yuriandradeog@gmail.com>
+Date:   Mon Aug 5 11:41:54 2024 -0300
+
+    inicio da integracao com dialogic
+
+[33mcommit 54bb5c7b8778f4e2a8e410655343e41e47ab6158[m
+Author: Yuri <yuriandradeog@gmail.com>
+Date:   Sun Jun 30 10:53:41 2024 -0300
+
+    end day 2
+
+[33mcommit 8db5b50cedeb20d001db562f2563b842b553dbef[m
+Author: Yuri <yuriandradeog@gmail.com>
+Date:   Sun Jun 30 10:29:25 2024 -0300
+
+    created point and click object
+
+[33mcommit 30ebadb009a7c27ce1ab509777c38889bd394d6c[m
+Author: Yuri <yuriandradeog@gmail.com>
+Date:   Sun Jun 30 10:11:55 2024 -0300
+
+    Revert "erro"
+    
+    This reverts commit aed54cec04706b550e7ac57b6220b1f798d3b953.
+
+[33mcommit aed54cec04706b550e7ac57b6220b1f798d3b953[m
+Author: Yuri <yuriandradeog@gmail.com>
+Date:   Sun Jun 30 10:11:49 2024 -0300
+
+    erro
+
+[33mcommit 49a0a5dd1fae5c61a5ac396717cdc34cbcbfa0b3[m
+Author: Yuri <yuriandradeog@gmail.com>
+Date:   Sat Jun 29 18:27:01 2024 -0300
+
+    criacao do mapa da ilha
+
+[33mcommit a251553f0428e6dfe26a581c64c0f31e62598327[m
+Author: Yuri <yuriandradeog@gmail.com>
+Date:   Thu Jun 27 11:53:58 2024 -0300
+
+    adicionando .txt com comandos do git
+
+[33mcommit 512b0e97eff3f88973e0841de10622e77c7bf048[m
+Author: Yuri <yuriandradeog@gmail.com>
+Date:   Thu Jun 27 11:33:38 2024 -0300
+
+    initial files

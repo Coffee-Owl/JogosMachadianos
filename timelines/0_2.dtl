@@ -1,0 +1,89 @@
+set {Cena0_2.escolha3} = true
+[background arg="res://images/Blackscreen.png" fade="0.0"]
+[i]Você chega em seus aposentos, cansado do dia longo que teve. é um lugar pequeno mas aconchegante.[/i]
+[background fade="0.0"]
+join Jogador 1
+Jogador: Ufa, estou cansado. Hoje não tive a chance de parar e respirar.
+Jogador: Sinceramente ainda não estou muito certo de onde me meti, mas pelo menos o Sr. Paon me recebeu bem e me passa confiança.
+Jogador: A ilha parece ser um lugar bem cuidado e bem seguro também, este apartamento é confortável… Não tenho muito do que reclamar.
+[i]Você percebe que existe um jornal na mesa da cozinha e decide ver se existe algum trabalho nos classificados para você para a próxima semana, afinal, a sua dívida não se pagará sozinha…[/i]
+[i]Depois de uma breve análise, duas ofertas chamam a sua atenção. Ambas estão perto dos seus aposentos e parece que pagam bem.[/i]
+label loop 1 (loop 1)
+- Analisar emprego de caixa na “Vendinha da dona Mocotinha”
+	if {Cena0_2.escolha1} == true:
+		Jogador: Já olhei essa oferta.
+		jump loop 1
+	[signal arg="roll carisma"]
+	Jornal: Busco alguém de bom caráter e sociável para atender meus clientes. 8 horas por dia.
+	if {dice_value} >= 4 || {player_profession} == "Professor":
+		Jogador: Parece um bom trabalho, tenho facilidade para trabalhar com pessoas.
+	elif {dice_value} > 2:
+		Jogador: Dá para o gasto, vai ser por pouco tempo.
+	else:
+		Jogador: Err, não sei se me daria muito bem como caixa…
+	set {Cena0_2.escolha1} = true
+	if {Cena0_2.escolha2} == false:
+		jump loop 1
+- Analisar oferta de carregador no “Armazém do seu João”
+	if {Cena0_2.escolha2} == true:
+		Jogador: Já olhei essa oferta.
+		jump loop 1
+	[signal arg="roll forca"]
+	Jornal: Procuro alguém bom de braço e resistente pra ajudar com a mercadoria no armazém. 8 horas por dia.
+	if {dice_value} >= 4 || {player_profession} == "Atleta":
+		Jogador: Carregar umas caixas por aí é moleza. Acho que dou conta.
+	elif {dice_value} > 2:
+		Jogador: Parece puxado mas pelo menos vou me manter ativo enquanto trabalho.
+	else:
+		Jogador: Só de pensar em ficar oito horas carregando caixa de um lado pro outro já me arrepio…
+	set {Cena0_2.escolha2} = true
+	if {Cena0_2.escolha1} == false:
+		jump loop 1
+Jogador: Amanhã posso andar pela cidade e aproveitar pra conhecer essas lojas.
+Jogador: Enfim, muita coisa aconteceu hoje…
+set {Cena0_2.escolha3} = false
+label loop2
+if {Cena0_2.escolha3} == false:
+	- A Ilha
+		Jogador: Essa ilha realmente entregou o que prometeu até agora… É até difícil de acreditar, tudo aqui é bonito e a cidade é bem construída. Espero que as coisas continuem indo bem.
+		set {Cena0_2.escolha3} = true
+		jump 0_2/loop2
+	- O Ovo de Ouro
+		Jogador: Não esperava que o banco fosse me fornecer um lugar para ficar também. Eles realmente devem levar este plano de investir nessa ilha muito à sério…
+		set {Cena0_2.escolha3} = true
+		jump 0_2/loop2
+	- Sr. Paon
+		Jogador: Ele parece ser o retrato falado do que é um pavão… É bem educado e se porta bem, talvez meio estranho as vezes mas isso também é de se esperar.
+		set {Cena0_2.escolha3} = true
+		jump 0_2/loop2
+	- O café
+		Jogador: Aquele café me deixou muito intrigado. Faz sentido atrair tanta atenção. Mas será que realmente valeu a pena arriscar tanto pra plantar nesta ilha? Fiquei curioso.
+		set {Cena0_2.escolha3} = true
+		jump 0_2/loop2
+else:
+	- A Ilha
+		Jogador: Essa ilha realmente entregou o que prometeu até agora… É até difícil de acreditar, tudo aqui é bonito e a cidade é bem construída. Espero que as coisas continuem indo bem.
+		jump 0_2/loop2
+	- O Ovo de Ouro
+		Jogador: Não esperava que o banco fosse me fornecer um lugar para ficar também. Eles realmente devem levar este plano de investir nessa ilha muito à sério…
+		jump 0_2/loop2
+	- Sr. Paon
+		Jogador: Ele parece ser o retrato falado do que é um pavão… É bem educado e se porta bem, talvez meio estranho as vezes mas isso também é de se esperar.
+		jump 0_2/loop2
+	- O café
+		Jogador: Aquele café me deixou muito intrigado. Faz sentido atrair tanta atenção. Mas será que realmente valeu a pena arriscar tanto pra plantar nesta ilha? Fiquei curioso.
+		jump 0_2/loop2
+	- Estou ficando com sono…
+		[i]Após refletir sobre seu dia, você se sente mais cansado.[/i]
+		[i]Seus olhos estão ficando cada vez mais pesados, e o peso do longo dia que teve na ilha está começando a descer sobre seus ombros.[/i]
+		[i]Você deixa o jornal na mesa de cabeceira ao lado da cama, e se prepara para dormir.[/i]
+leave Jogador
+[background arg="res://images/Blackscreen.png" fade="0.0"]
+[i]O dia amanhece.[/i]
+[i]Hoje é domingo, dia de descanso para a maioria das pessoas, mas é um bom momento para conhecer melhor a cidade.[/i]
+[i]Você acorda bem descansado, e decide limpar sua garganta antes de enfrentar o dia.[/i]
+[background fade="0.0"]
+join Jogador 1
+Jogador: COCOCÓ—  cof cof
+Jogador: ahem. Bem melhor.
+Jogador: Hora de me arrumar, vou lá na cidade dar uma olhada nos empregos que vi ontem.

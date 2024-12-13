@@ -1,0 +1,38 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+"_translation_id": "",
+"color": Color(1, 1, 1, 1),
+"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+"default_portrait": "Padrao",
+"description": "",
+"display_name": "Sr. Paon",
+"mirror": false,
+"nicknames": [""],
+"offset": Vector2(0, 0),
+"portraits": {
+"Padrao": {
+"export_overrides": {
+"image": "\"res://images/paon1.png\""
+},
+"mirror": true,
+"offset": Vector2(0, 2),
+"scale": 0.8,
+"scene": ""
+},
+"PadraoDescolorido": {
+"export_overrides": {
+"image": "\"res://images/paon1_uncolor.png\""
+},
+"mirror": true,
+"offset": Vector2(0, 0),
+"scale": 0.8,
+"scene": ""
+}
+},
+"scale": 1.0
+}

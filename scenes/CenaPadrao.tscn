@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnqwp0cag4tch"]
+
+[ext_resource type="PackedScene" uid="uid://dusc1xnnnyciw" path="res://objects/dialogic_manager.tscn" id="1_c1ufg"]
+[ext_resource type="PackedScene" uid="uid://bu7hnaxljkcne" path="res://objects/player_atributes.tscn" id="2_355k5"]
+
+[node name="Capitulo1Cena0" type="Node2D"]
+
+[node name="DialogicManager" parent="." instance=ExtResource("1_c1ufg")]
+
+[node name="PlayerAtributes" parent="." instance=ExtResource("2_355k5")]

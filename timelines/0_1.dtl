@@ -1,0 +1,125 @@
+[style name="DialogicStyle"]
+join Jogador 1
+[i]Você chega no banco da ilha. O lugar é pequeno, porém bem ornamentado e sofisticado. A recepcionista te direciona para a sala do gerente, que conduzirá sua entrevista.[/i]
+join Paon 3
+[i]Entrando na sala, um pavão vestido de forma elegante e com porte requintado te cumprimenta.[/i]
+join Jogador (PadraoDescolorido) 1
+Paon: Bem vindo, senhor! Nossa instituição estava aguardando ansiosamente sua chegada.
+Paon: Sou gerente do Ovo de Ouro, o banco desta ilha. Vou te entrevistar para saber mais sobre sua situação e buscar a melhor forma de te ajudar.
+Paon: Antes de conversarmos, infelizmente precisamos cumprir alguns ritos burocráticos... Você entende, certo?
+Paon: Por gentileza, poderia assinar estes documentos?
+[i]Insira seu nome?[i]
+[text_input text="Insira Seu Nome:" var="player_name"]
+[signal arg="change_name"]
+join Paon (PadraoDescolorido) 3
+Jogador (Padrao): Meu nome é [b]{player_name}[b].
+[i]Insira sua profissão\:[i]
+- Pesquisador
+	set {player_profession} = "Pesquisador"
+- Professor
+	set {player_profession} = "Professor"
+- Atleta
+	set {player_profession} = "Atleta"
+[signal arg="change_profession"]
+join Jogador (PadraoDescolorido) 1
+Paon (Padrao): Muito bem, Sr. {player_name}.
+Paon: Como foi sua viagem?
+- Foi ótima
+	Paon: Que bom! Ficamos felizes que os serviços de transporte de nossa pequena cidade atenderam sua expectativa.
+- O barco era muito desconfortável
+	Paon: Que pena, farei questão de direcionar sua queixa à companhia náutica de nossa cidade.
+- Não sei, dormi a viagem inteira
+	Paon: Hmm... Creio que as acomodações da balsa foram de seu agrado então? Ficamos contentes.
+Paon: Prezamos sempre pelo conforto máximo de nossos visitantes mais ilustres, e primeiras impressões são muito importantes.
+Paon: Gostaria de um café?
+- Aceito, muito obrigado
+	[i]Paon te serve uma xícara de café. Ela é de porcelana fina e o café de ótima qualidade.[i]
+	set {tomou_cafe} = true
+- Não precisa, muito obrigado
+	[i]Paon serve uma xícara apenas para ele. Você nota que ele não colocou açúcar.[i]
+Paon: Bom... Agora que está mais bem situado, vamos ao assunto que provavelmente te interessa mais.
+Paon: Como imagino que sabe, esta ilha era bem pouco desenvolvida antes de nossa chegada. Havia apenas algumas fazendas e vilarejos, nada muito impressionante ou de grande porte.
+Paon: Foi o Sr. Aguiar que descobriu o enorme potencial econômico deste lugar e trouxe oportunidades para cidadãos como o senhor.
+join Paon (Padrao) 3
+Jogador (Padrao): O que faz desta ilha um lugar tão especial?
+join Jogador (PadraoDescolorido) 1
+Paon (Padrao): Veja, Sr. {player_name}, este café que acabei de servir é produzido nos sítios desta ilha.
+if {tomou_cafe} == true:
+	join Paon (PadraoDescolorido) 3
+	Jogador (Padrao): É o melhor café que já tomei.
+else:
+	join Paon (PadraoDescolorido) 3
+	Jogador (Padrao): O cheiro é ótimo.
+join Jogador (PadraoDescolorido) 1
+Paon (Padrao): Provavelmente é o melhor café que tomará em toda sua vida.
+Paon: Há anos o Sr. Aguiar vem pesquisando lugares para produzir um café que atende os mais altos padrões da indústria. Esta ilha possui um solo especial, dotado de nutrientes.
+if {player_profession} == "Pesquisador":
+	Jogador (Padrao): Interessante, em todos meus anos de pesquisa, nunca ouvi falar de nada assim.
+join Jogador (PadraoDescolorido) 1
+Paon (Padrao): Fizemos um teste com sementes trazidas do continente que foi um grande sucesso. Já na primeira leva conseguimos produzir algo muito acima do que é considerado um café bom.
+Paon: Com isso, há muitos investidores de olho neste lugar, mas nós não estamos aceitando qualquer financiamento. Buscamos criar um lugar onde ideias inovadoras possam prosperar, e possamos juntos pensar em novas formas de viver.
+Paon: Como o sr. veio de uma universidade, seu conhecimento será essencial para desenvolvermos nossos planos.
+join Paon (PadraoDescolorido) 3
+Jogador (Padrao): E como vou ajudar? Não sou tão renomado assim.
+join Jogador (PadraoDescolorido) 1
+Paon (Padrao): Fique tranquilo, pois nosso plano ainda está em desenvolvimento. Em breve poderemos compartilhar mais com você.
+Paon: Estamos cientes da sua situação financeira, e estamos dispostos a te ajudar. Poderia me contar mais sobre como adquiriu sua dívida?
+join Paon (PadraoDescolorido) 3
+Jogador (Padrao): Minha dívida... [b][i](Está escolha mudará os atributos do seu personagem)[i][b]
+- Minha irmã está doente
+	[signal arg="increase_att empatia 2"]
+	[signal arg="decrease_att resistencia 1"]
+	join Jogador (PadraoDescolorido) 1
+	Paon (Padrao): Sinto muito, Sr. {player_name}. Em breve estou certo de que conseguirá prestar todo suporte financeiro à sua irmã.
+- Perdi tudo em uma aposta
+	[signal arg="increase_att carisma 1"]
+	[signal arg="increase_att conhecimento 1"]
+	[signal arg="decrease_att logica 1"]
+	join Jogador (PadraoDescolorido) 1
+	Paon (Padrao): Um espírito aventureiro não consegue se acalmar as vezes, não é mesmo? Fique tranquilo pois nesta ilha ainda há formas de saciar seu ímpeto.
+	Paon: Só não exagere.
+- Me aventurei num investimento, e deu errado
+	[signal arg="increase_att criatividade 1"]
+	[signal arg="increase_att empatia 1"]
+	[signal arg="decrease_att agilidade 1"]
+	join Jogador (PadraoDescolorido) 1
+	Paon (Padrao): Nem sempre as pessoas sabem apreciar boas ideias. Não desanime, haverá outras oportunidades nesta ilha.
+- Caí em um golpe
+	[signal arg="increase_att moral 2"]
+	[signal arg="decrease_att criatividade 1"]
+	join Jogador (PadraoDescolorido) 1
+	Paon (Padrao): Pessoas íntegras e bem intencionadas como o sr. são necessárias na sociedade. Não se culpe.
+- Perdi um processo jurídico
+	[signal arg="increase_att forca 2"]
+	[signal arg="decrease_att carisma 1"]
+	join Jogador (PadraoDescolorido) 1
+	Paon (Padrao): Tenho certeza que teve seus motivos, afinal, alguns conflitos são inevitáveis.
+- Prefiro não comentar...
+	[signal arg="increase_att forca 1"]
+	[signal arg="increase_att logica 2"]
+	[signal arg="decrease_att empatia 1"]
+	[signal arg="decrease_att moral 1"]
+	join Jogador (PadraoDescolorido) 1
+	Paon (Padrao): Tudo bem, todos guardamos nossos segredos... Até mesmo alguém como eu tem coisas prefere não falar.
+	Paon: Pelo menos não em público.
+Paon: Bem, por enquanto é só isso que precisamos saber. Providenciamos uma acomodação para o senhor enquanto se situa nesta ilha.
+Paon: Gostaria que retornasse daqui a uma semana. Por enquanto, sugiro que tome seu tempo para conhecer melhor a realidade deste lugar.
+Paon: Estou curioso para saber o que pensa.
+if {tomou_cafe} == true:
+	join Paon (PadraoDescolorido) 3
+	Jogador (Padrao): Tudo bem. Obrigado pelo café.
+else:
+	join Paon (PadraoDescolorido) 3
+	Jogador (Padrao): Tudo bem.
+join Jogador (PadraoDescolorido) 1
+Paon (Padrao): Não é sempre que recebemos galos nesta ilha. Estamos ansiosos para que sua cantoria anime nossas manhãs.
+join Paon (PadraoDescolorido) 3
+Jogador (Padrao): Eu não canto muito bem...
+join Jogador (PadraoDescolorido) 1
+Paon (Padrao): Não é sobre cantar bem ou mal! Há cantos e cantos neste mundo, mas nada ressoa melhor entre tantos sons quanto a cantoria de um galo.
+join Paon (PadraoDescolorido) 3
+Jogador (Padrao): Err.. obrigado.
+Jogador: Estou indo então, obrigado pela oportunidade.
+join Jogador (PadraoDescolorido) 1
+Paon (Padrao): Nossa atendente lhe informará como chegar em seus novos aposentos.
+Paon: Tenha uma ótima semana.
