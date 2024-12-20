@@ -29,6 +29,7 @@ func rollDice(command):
 			if atribute_in_use == atribute:
 				dice_value += atribute_dic[atribute]
 				Dialogic.VAR.dice_value = dice_value
+				print("rolou " + atribute_in_use + " e conseguiu " + str(dice_value))
 			
 func changeAtribute(command):
 	var trigger = command.get_slice(" ", 0)

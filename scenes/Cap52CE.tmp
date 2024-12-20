@@ -1,0 +1,57 @@
+[gd_scene load_steps=11 format=3 uid="uid://dlx8dyh4181b7"]
+
+[ext_resource type="PackedScene" uid="uid://dusc1xnnnyciw" path="res://objects/dialogic_manager.tscn" id="1_t1rax"]
+[ext_resource type="Script" path="res://scenes/MudarBG.gd" id="1_w3td7"]
+[ext_resource type="Texture2D" uid="uid://cfsfh2e7p1t61" path="res://images/quarto.png" id="2_i8yml"]
+[ext_resource type="PackedScene" uid="uid://b3embpj5dh3je" path="res://scenes/FimDaBeta.tscn" id="2_sy20l"]
+[ext_resource type="PackedScene" uid="uid://bu7hnaxljkcne" path="res://objects/player_atributes.tscn" id="3_22cmn"]
+[ext_resource type="Texture2D" uid="uid://bka8cnerkg8xd" path="res://images/ruanoite.png" id="3_w674j"]
+[ext_resource type="Texture2D" uid="uid://ccyuvyq5rs86j" path="res://images/cidade.png" id="4_me613"]
+[ext_resource type="Texture2D" uid="uid://deu0f1x2i5ryp" path="res://images/vendinha.png" id="4_rwb6c"]
+[ext_resource type="Texture2D" uid="uid://calwgxbfrpfoy" path="res://images/armazem.png" id="5_hvf0b"]
+[ext_resource type="Texture2D" uid="uid://dat8gkdnsve2q" path="res://images/bar.png" id="7_8q7o8"]
+
+[node name="Capitulo1" type="Node2D"]
+
+[node name="MudarBG" type="Node2D" parent="."]
+script = ExtResource("1_w3td7")
+
+[node name="Cidade" type="Sprite2D" parent="MudarBG"]
+visible = false
+position = Vector2(501, 389)
+texture = ExtResource("4_me613")
+
+[node name="Quarto" type="Sprite2D" parent="MudarBG"]
+visible = false
+position = Vector2(470, 181)
+scale = Vector2(0.9987, 0.9987)
+texture = ExtResource("2_i8yml")
+
+[node name="RuaNoite" type="Sprite2D" parent="MudarBG"]
+visible = false
+position = Vector2(471.058, 316)
+scale = Vector2(1.11695, 1.11695)
+texture = ExtResource("3_w674j")
+
+[node name="Vendinha" type="Sprite2D" parent="MudarBG"]
+visible = false
+position = Vector2(465, 247)
+texture = ExtResource("4_rwb6c")
+
+[node name="Armazem" type="Sprite2D" parent="MudarBG"]
+visible = false
+position = Vector2(470.444, 351.25)
+scale = Vector2(1.06624, 1.06624)
+texture = ExtResource("5_hvf0b")
+
+[node name="Bar" type="Sprite2D" parent="MudarBG"]
+visible = false
+position = Vector2(478, 206)
+scale = Vector2(0.935547, 0.935547)
+texture = ExtResource("7_8q7o8")
+
+[node name="DialogicManager" parent="." instance=ExtResource("1_t1rax")]
+dialog_to_start = "cap1"
+scene_to_change = ExtResource("2_sy20l")
+
+[node name="PlayerAtributes" parent="." instance=ExtResource("3_22cmn")]

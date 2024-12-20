@@ -8,7 +8,7 @@ Paon: Bem vindo, senhor! Nossa instituição estava aguardando ansiosamente sua 
 Paon: Sou gerente do Ovo de Ouro, o banco desta ilha. Vou te entrevistar para saber mais sobre sua situação e buscar a melhor forma de te ajudar.
 Paon: Antes de conversarmos, infelizmente precisamos cumprir alguns ritos burocráticos... Você entende, certo?
 Paon: Por gentileza, poderia assinar estes documentos?
-[i]Insira seu nome?[i]
+[i]Insira o nome do seu personagem[i]
 [text_input text="Insira Seu Nome:" var="player_name"]
 [signal arg="change_name"]
 join Paon (PadraoDescolorido) 3

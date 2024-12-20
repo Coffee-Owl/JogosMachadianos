@@ -1,19 +1,18 @@
 [gd_scene load_steps=5 format=3 uid="uid://bscuvpbbgs8es"]
 
 [ext_resource type="PackedScene" uid="uid://dusc1xnnnyciw" path="res://objects/dialogic_manager.tscn" id="1_737up"]
-[ext_resource type="Texture2D" uid="uid://b751nnbnnnrng" path="res://images/banco_background4.png" id="1_lmtun"]
 [ext_resource type="PackedScene" uid="uid://bu7hnaxljkcne" path="res://objects/player_atributes.tscn" id="3_g6ovj"]
-[ext_resource type="PackedScene" uid="uid://davla5o5gk5ka" path="res://scenes/Capitulo0_Cena2.tscn" id="4_vx8jr"]
+[ext_resource type="PackedScene" uid="uid://davla5o5gk5ka" path="res://scenes/Capitulo0_Cena2.tscn" id="3_uy1al"]
+[ext_resource type="Texture2D" uid="uid://bgkjr83cvxsww" path="res://images/bancobg.png" id="4_fb1sj"]
 
 [node name="Capitulo0_Cena0" type="Node2D"]
-
-[node name="Background" type="Sprite2D" parent="."]
-position = Vector2(510, 320)
-scale = Vector2(0.856771, 0.856771)
-texture = ExtResource("1_lmtun")
 
 [node name="PlayerAtributes" parent="." instance=ExtResource("3_g6ovj")]
 
 [node name="DialogicManager" parent="." instance=ExtResource("1_737up")]
 dialog_to_start = "0_1"
-scene_to_change = ExtResource("4_vx8jr")
+scene_to_change = ExtResource("3_uy1al")
+
+[node name="Bancobg" type="Sprite2D" parent="."]
+position = Vector2(468, 298)
+texture = ExtResource("4_fb1sj")

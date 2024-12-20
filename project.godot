@@ -26,16 +26,27 @@ directories/dch_directory={
 "Carta": "res://characters/Carta.dch",
 "Jogador": "res://characters/Jogador.dch",
 "Jornal": "res://characters/Jornal.dch",
-"Paon": "res://characters/Paon.dch"
+"Mocotinha": "res://characters/Mocotinha.dch",
+"Paon": "res://characters/Paon.dch",
+"Psstana": "res://characters/Psstana.dch",
+"Rodolfina": "res://characters/Rodolfina.dch",
+"Seu João": "res://characters/Seu João.dch"
 }
 directories/dtl_directory={
 "0_0": "res://timelines/0_0.dtl",
 "0_1": "res://timelines/0_1.dtl",
-"0_2": "res://timelines/0_2.dtl"
+"0_2": "res://timelines/0_2.dtl",
+"cap1": "res://timelines/cap1.dtl"
 }
 layout/style_list=["res://images/DialogicStyle.tres"]
 layout/default_style="res://images/DialogicStyle.tres"
 variables={
+"Capitulo1": {
+"bar": false,
+"musico": false,
+"visitou_armazem": false,
+"visitou_loja": false
+},
 "Cena0_1": {},
 "Cena0_2": {
 "escolha1": false,

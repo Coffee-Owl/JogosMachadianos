@@ -1,0 +1,277 @@
+[i]Você caminha pela cidade. É um lugar pequeno, porém com muita diversidade. Ao norte, as casas dos barões e capitalistas buscando expandir seus territórios se erguem luxuosas na beira da praia.[/i]
+[i]Indo mais para o centro, você vê uma praça e uma igreja, notavelmente mais antigas e simples que as residências que acabara de ver. Mais ao lado há um pequeno hospital, e uma rua que desce para uma parte um pouco mais afastada da cidade. O endereço nos classificados te leva para lá.[/i]
+[i]Descendo a rua, o cenário começa a mudar. De repente, as mansões chiques dão lugar à residências humildes e pequenos comércios. Os trabalhadores e serventes moram por aqui. Já ao entrar na rua, avista um bar, lotado e animado, com risadas e cantoria.[/i]
+[i]Descendo mais, você avista duas lojas, uma em cada lado da rua. É impossível não notar que isso parece ser proposital. É quase como se os dois estabelecimentos estivessem se encarando.[/i]
+Jogador: Parece que aqui é o endereço descrito no jornal…
+Jogador: Em qual delas deveria ir primeiro?
+label inicioEmprego
+join Jogador 1
+- Loja da dona Mocotinha
+	if {Capitulo1.visitou_loja} == true:
+		Jogador: Já fui nessa loja...
+		jump inicioEmprego
+	[signal arg="mudarBG vendinha"]
+	set {Capitulo1.visitou_loja} = true
+	[i]Você entra em uma pequena vendinha, o lugar é humilde e parece bem cuidado, tem uma boa variedade de todo tipo de legume e verdura, além, é claro, do cobiçado café. No balcão se encontra uma vaca.[/i]
+	join Mocotinha 3
+	Mocotinha: Bem vindo, moço! Nunca vi o senhor por aqui, está atrás de umas verduras pra fazer o almoço de domingo?
+	Mocotinha: Aqui é humilde mas é tudo do bom!
+	Jogador: Bom dia, Dona.
+	- Vim aqui pela vaga de caixa que vi no jornal.
+		Mocotinha: É aqui sim, meu bem. Se tá procurando serviço, veio no lugar certo.
+		Mocotinha: A venda tá bem movimentada e minhas costas estão me matando de ficar aqui em pé o dia inteiro.
+		Jogador: Ora, que sorte a minha, veja, vim para a ilha recentemente e preciso levantar um dinheiro.
+	- Sua loja é linda! Fiquei sabendo que precisava de um caixa..
+		Mocotinha: Obrigada sô! É o orgulho da família, não imaginava que um galo como o senhor ia gostar.
+		Mocotinha: Estou precisando sim, meu bem! Sempre levei o negócio sozinha, mas hoje em dia tô com uma dor na coluna que não me deixa em paz.
+	- É aqui que precisam de um atendente bonitão?
+		[signal arg="roll carisma"]
+		if {dice_value} >= 3:
+			[i]Dona Mocotinha dá uma risada sincera.[/i]
+			[signal arg="increase_att carisma 1"]
+			Mocotinha: O senhor é bom de papo né? Acho que um atendente bonitão vai melhorar minhas vendas!
+		else:
+			[i]Sua piada falha em impressionar dona Mocotinha e ela sorri para o clima não ficar muito esquisito.[/i]
+			Mocotinha: Uai, tamo precisando de atendente sim, sô.
+	Mocotinha: Precisava de um rapaz como o senhor, jovem e bem disposto pra falar com a freguesia e me ajudar a contar o dinheiro no caixa.
+	if {player_profession}  ==  "Pesquisador" || {player_profession}  ==  "Professor":
+		Jogador: Já estou acostumado com conta! Trabalhava com isso antes de vir para cá.
+	else:
+		Jogador: Nunca fiz um trabalho desses, mas estou disposto a aprender.
+	Mocotinha: Bom demais sô! Eu vou te ensinando quando vier. Pode aparecer aqui quando tiver precisando de um trocado, as portas estão abertas.
+	Jogador: Muito obrigado!
+	leave Jogador
+	leave Mocotinha
+	Jogador: [i]Dona Mocotinha parece ser uma boa pessoa. Trabalhando aqui, posso conhecer melhor as pessoas desta ilha e melhorar meu jogo social.[/i]
+	[signal arg="mudarBG cidade"]
+	if {Capitulo1.visitou_armazem} == false:
+		Jogador: Agora vou visitar o armazém.
+		jump inicioEmprego
+	else:
+		jump finalEmprego
+- Armazém do Seu João
+	if {Capitulo1.visitou_armazem} == true:
+		Jogador: Já visitei essa loja...
+		jump inicioEmprego
+	[signal arg="mudarBG armazem"]
+	set {Capitulo1.visitou_armazem} = true
+	[i]Você entra em um grande armazém, o lugar é grande e parece um pouco abandonado e sujo, você vê diversos caixotes empilhados, um deles solta o aroma singular do café da ilha. Ao fundo da loja você vê um touro movendo um caixote que parece bem pesado. Ele não parece perceber você entrando.[/i]
+	join Jogador 1
+	Err… Bom dia?
+	join "Seu João" 3
+	[i]O touro olha para você de lado, o caixote ainda em mãos.[/i]
+	"Seu João": Dia.
+	Jogador: Aqui é o Armazém do Seu João? Gostaria de falar com ele.
+	"Seu João": Sou eu.
+	- Eu vi a oferta de emprego nos classificados, eu tenho interesse.
+		"Seu João": Então veio no lugar certo. Estou precisando de mão de obra.
+	- Tô aqui pra levantar peso e ganhar um trocado.
+		"Seu João": Se você conseguir carregar essas caixas e não deixar nada cair, tá contratado.
+		[signal arg="roll forca"]
+		if {dice_value} >= 3:
+			[i]As caixas são pesadas e você tem dificuldade, mas carrega tudo com maestria.[/i]
+			[signal arg="increase_att forca 1"]
+			"Seu João": Heh. Nada mal.
+			[i]Você não consegue deixar de notar que Seu João soltou um sorriso de canto.[/i]
+		else:
+			[i]Você empurra, empurra e a caixa não sai do lugar. Alguma articulação sua com certeza não está no lugar que deveria depois de fazer este esforço…[/i]
+			"Seu João": Parece que você vai precisar levantar bastante peso pra melhorar esses seus bracinhos de frango…
+			"Seu João": Ops. Foi mal, não foi minha intenção.
+	- Eu. Emprego. Agora.
+		"Seu João": Tá.
+	Você pode vir de segunda a sexta. Você vai ajudar com o estoque e a limpeza.
+	if {player_profession} == "Atleta":
+		Jogador: Isso é moleza.
+	else:
+		Jogador: Nunca fui muito de pegar pesado, mas tudo tem que começar em algum lugar.
+	"Seu João": Vamos ver. Eu te ensino umas coisas.
+	Jogador: Obrigado.
+	Jogador: [i]Seu João é bem estóico… Mas parece ser um homem dedicado. Se eu trabalhar aqui posso melhorar minhas habilidades físicas e aprender uns novos truques.[/i]
+	[signal arg="mudarBG cidade"]
+	leave --All--
+	if {Capitulo1.visitou_loja} == false:
+		Agora vou visitar a vendinha.
+		jump inicioEmprego
+label finalEmprego
+[i]As duas lojas parecem promissoras… Após suas conversas com Seu João e dona Mocotinha, você decide caminhar um pouco para conhecer melhor os arredores.[/i]
+[i]Você se lembra do bar que viu no caminho. Parece ser um bom lugar para conhecer melhor as pessoas.[/i]
+- Vou dar uma passada no boteco para conhecer melhor o pessoal da região.
+	join Jogador 1
+	[signal arg="mudarBG bar"]
+	[i]Chegando no bar você já consegue ouvir o som das risadas de longe e uma polca animada. Nas mesas de fora tem uma multidão bebendo e jogando cartas. Do lado de dentro há uma mesa de bilhar onde várias pessoas jogam enquanto conversam.
+	[i]Aos fundos, você avista um piano velho e um gato, que com muita maestria toca as músicas que animam todos os fregueses. Do lado direito, um balcão onde se encontra uma porca que serve bebidas aos clientes.[/i]
+	- Que músico talentoso! Vou ficar aqui na frente para apreciar melhor o som.
+		set {Capitulo1.musico} = true
+		[i]Você puxa uma cadeira para perto do piano e a música te envigora. Tocam uma, duas, três… e você nem vê o tempo passar.
+		join Jogador 1
+		join Psstana 3
+		Psstana: Minha nossa, parece que tenho um novo fã, miau!
+		Jogador: Você é muito bom! Que habilidade, cantar enquanto toca piano.
+		Psstana: Miaau… eu nem sou tão bom assim… hehe.
+		[i]O gato tenta ser humilde, mas está visivelmente lisonjeado com seus elogios.
+		Psstana: Meu nome é Psstana, qual é o seu?
+		Jogador: Eu sou {player_name}, sou novo aqui na cidade.
+		Psstana: Minha nossa, e o que você veio fazer nesse fim de mundo? Se você veio para se divertir, tem muuito lugar melhor!
+		- Eu vim à trabalho
+			Psstana: Então estou falando com um dos novos contratados do Ovo de Ouro! Que honra! Não sei o que está fazendo nessa espelunca mas tomara que goste! Aqui tem música boa e bebida de procedência questionável.
+			[i]O gato dá uma olhada sarcástica para a porca enquanto fala.
+		- Eu vim fazer uma bufunfa para pagar minha dívida
+			Psstana: Mais um? Tomara que dure mais que os últimos. Da última vez saíram correndo depois que o Paon deu uma dura neles.
+		- Tava entediado com a minha vida na cidade
+			Psstana: E veio justamente pra cá? Isso é um vilarejo no meio de uma ilha, tinha lugar melhor não? Hahaha!
+		Psstana: Brincadeiras à parte, seja bem vindo! Amo rostos e fregueses novos.
+		Psstana: Sou uma estrela em ascensão, sabe? Por enquanto estou sempre neste bar, mas você vai ver! Daqui a uns dois meses estarei tocando nos melhores restaurantes da Rua Alta!
+		leave Jogador
+		join Rodolfina 1
+		Rodolfina: Pfft. Sonha mais alto moleque.
+		leave Rodolfina
+		join Jogador 1
+		- Rua Alta?
+			Psstana: É a copacabana desta ilha! Beleza que tem umas vinte casas, mas é onde os barões moram! Sabe, o sr. Paon, o sr. Aguiar… Só gente de alto calibre!
+		- Foi um prazer te conhecer
+			Psstana: O prazer foi todo meu, sr. {player_name}! Agora, devo voltar ao piano. Ouve o burburinho? O povo clama por outra polca!
+			Psstana: Até breve!
+		leave --All--
+		jump bar
+	- As bebidas aqui parecem boas, vou dar uma olhada.
+		set {Capitulo1.bar} = true
+		[i]O balcão é de uma madeira bruta e envelhecida, com alguns bancos na frente dele.  Atrás, uma porca, que está atendendo os clientes, e ainda mais atrás ficam vários barris e garrafas de bebidas variadas, os cheiros delas se misturando.
+		join Jogador 1
+		join Rodolfina 3
+		Rodolfina: E aí chuchu, o que manda hoje?
+		- Me vê uma cerveja
+			Rodolfina: É pra já, docinho!
+			[i]A porca tira uma cerveja trincando de um balde de gelo. Cerveja é cerveja, não tem erro. Você se sente refrescado.
+		- Manda uma dose!
+			Rodolfina: Começando cedo hoje, ein? Claro, lá vai!
+			[i]Ela dá um sorriso e puxa uma cachaça dos fundos do balcão. Você nunca viu esta garrafa na vida.
+			[i]Você sente o cheiro atordoante e forte do álcool, e sente vontade de desistir. Você tem certeza que é isso que você quer?
+			- Sim
+				[signal arg="roll resistencia"]
+				if {dice_value} >= 3:
+					[i]A bebida arde, mas desce! Você ganhou o respeito da Porca pela sua coragem.
+					[signal arg="increase_att resistencia 1"]
+				else:
+					[i]Ao colocar a bebida na boca, você sente seus órgãos se revirando, e imediatamente cospe a dose. Todos ao seu redor viram e você se sente constrangido.
+			- Não
+		- Poderia me dar uma taça de vinho?
+			Rodolfina: Não servimos vinho por aqui, docinho. Vai na Rua Alta que você encontra.
+			[i]A porca revira os olhos disfarçadamente. Você decide pedir uma cerveja no lugar.
+		- Eu quero um suco de laranja!
+			Rodolfina: Que gracinha! Quer um canudinho também?
+			[i]A porca está visivelmente tirando sarro de você.
+			[i]O suco não parece ser das laranjas mais frescas mas pelo menos parece que são laranjas.
+		Rodolfina: Você é novo aqui não é? Uma cidade dessas tem tão pouca gente que sabemos o rosto de todo mundo.
+		Jogador: Sou sim. Estou aqui à negócios.
+		Rodolfina: Hmm… Aproveite bem. Aqui é bem simples, mas vem gente de toda a cidade pra cá. Da Rua Alta às fazendas, aqui tem de tudo um pouco.
+		Rodolfina: Um bom lugar para fazer amizades, eu diria. Estou aqui se precisar de qualquer coisa também.
+		Rodolfina: Meu nome é Rodolfina, mas todo mundo me chama de dona Fina.
+		Jogador: Obrigado pela hospitalidade.
+		Rodolfina: De nada chuchu! Volte sempre.
+		leave Jogador
+		join Psstana 1
+		Psstana: Essa aí topa tudo por cliente mesmo viu, vou te contar…
+		Rodolfina: Ah, esqueci de avisar, mas ignora aquele gato de rua ali. Só é bom quando tá caladinho tocando piano ou quando a boca tá ocupada cantando.
+		Psstana: Ei!
+		leave --All--
+		jump bar
+	label bar
+	- Que músico talentoso! Vou ficar aqui na frente para apreciar melhor o som.
+		if {Capitulo1.musico} == true:
+			[i]Psstana parece ocupado...
+			jump bar
+		set {Capitulo1.musico} = true
+		[i]Você puxa uma cadeira para perto do piano e a música te envigora. Tocam uma, duas, três… e você nem vê o tempo passar.
+		join Jogador 1
+		join Psstana 3
+		Psstana: Minha nossa, parece que tenho um novo fã, miau!
+		Jogador: Você é muito bom! Que habilidade, cantar enquanto toca piano.
+		Psstana: Miaau… eu nem sou tão bom assim… hehe.
+		[i]O gato tenta ser humilde, mas está visivelmente lisonjeado com seus elogios.
+		Psstana: Meu nome é Psstana, qual é o seu?
+		Jogador: Eu sou {player_name}, sou novo aqui na cidade.
+		Psstana: Minha nossa, e o que você veio fazer nesse fim de mundo? Se você veio para se divertir, tem muuito lugar melhor!
+		- Eu vim à trabalho
+			Psstana: Então estou falando com um dos novos contratados do Ovo de Ouro! Que honra! Não sei o que está fazendo nessa espelunca mas tomara que goste! Aqui tem música boa e bebida de procedência questionável.
+			[i]O gato dá uma olhada sarcástica para a porca enquanto fala.
+		- Eu vim fazer uma bufunfa para pagar minha dívida
+			Psstana: Mais um? Tomara que dure mais que os últimos. Da última vez saíram correndo depois que o Paon deu uma dura neles.
+		- Tava entediado com a minha vida na cidade
+			Psstana: E veio justamente pra cá? Isso é um vilarejo no meio de uma ilha, tinha lugar melhor não? Hahaha!
+		Psstana: Brincadeiras à parte, seja bem vindo! Amo rostos e fregueses novos.
+		Psstana: Sou uma estrela em ascensão, sabe? Por enquanto estou sempre neste bar, mas você vai ver! Daqui a uns dois meses estarei tocando nos melhores restaurantes da Rua Alta!
+		leave Jogador
+		join Rodolfina 1
+		Rodolfina: Pfft. Sonha mais alto moleque.
+		leave Rodolfina
+		join Jogador 1
+		- Rua Alta?
+			Psstana: É a copacabana desta ilha! Beleza que tem umas vinte casas, mas é onde os barões moram! Sabe, o sr. Paon, o sr. Aguiar… Só gente de alto calibre!
+		- Foi um prazer te conhecer
+			Psstana: O prazer foi todo meu, sr. {player_name}! Agora, devo voltar ao piano. Ouve o burburinho? O povo clama por outra polca!
+			Psstana: Até breve!
+		leave --All--
+		jump bar
+	- As bebidas aqui parecem boas, vou dar uma olhada.
+		if {Capitulo1.bar} == true:
+			Jogador: Já bebi o suficiente hoje...
+			jump bar
+		set {Capitulo1.bar} = true
+		[i]O balcão é de uma madeira bruta e envelhecida, com alguns bancos na frente dele.  Atrás, uma porca, que está atendendo os clientes, e ainda mais atrás ficam vários barris e garrafas de bebidas variadas, os cheiros delas se misturando.
+		join Jogador 1
+		join Rodolfina 3
+		Rodolfina: E aí chuchu, o que manda hoje?
+		- Me vê uma cerveja
+			Rodolfina: É pra já, docinho!
+			[i]A porca tira uma cerveja trincando de um balde de gelo. Cerveja é cerveja, não tem erro. Você se sente refrescado.
+		- Manda uma dose!
+			Rodolfina: Começando cedo hoje, ein? Claro, lá vai!
+			[i]Ela dá um sorriso e puxa uma cachaça dos fundos do balcão. Você nunca viu esta garrafa na vida.
+			[i]Você sente o cheiro atordoante e forte do álcool, e sente vontade de desistir. Você tem certeza que é isso que você quer?
+			- Sim
+				[signal arg="roll resistencia"]
+				if {dice_value} >= 3:
+					[i]A bebida arde, mas desce! Você ganhou o respeito da Porca pela sua coragem.
+					[signal arg="increase_att resistencia 1"]
+				else:
+					[i]Ao colocar a bebida na boca, você sente seus órgãos se revirando, e imediatamente cospe a dose. Todos ao seu redor viram e você se sente constrangido.
+			- Não
+		- Poderia me dar uma taça de vinho?
+			Rodolfina: Não servimos vinho por aqui, docinho. Vai na Rua Alta que você encontra.
+			[i]A porca revira os olhos disfarçadamente. Você decide pedir uma cerveja no lugar.
+		- Eu quero um suco de laranja!
+			Rodolfina: Que gracinha! Quer um canudinho também?
+			[i]A porca está visivelmente tirando sarro de você.
+			[i]O suco não parece ser das laranjas mais frescas mas pelo menos parece que são laranjas.
+		Rodolfina: Você é novo aqui não é? Uma cidade dessas tem tão pouca gente que sabemos o rosto de todo mundo.
+		Jogador: Sou sim. Estou aqui à negócios.
+		Rodolfina: Hmm… Aproveite bem. Aqui é bem simples, mas vem gente de toda a cidade pra cá. Da Rua Alta às fazendas, aqui tem de tudo um pouco.
+		Rodolfina: Um bom lugar para fazer amizades, eu diria. Estou aqui se precisar de qualquer coisa também.
+		Rodolfina: Meu nome é Rodolfina, mas todo mundo me chama de dona Fina.
+		Jogador: Obrigado pela hospitalidade.
+		Rodolfina: De nada chuchu! Volte sempre.
+		leave Jogador
+		join Psstana 1
+		Psstana: Essa aí topa tudo por cliente mesmo viu, vou te contar…
+		Rodolfina: Ah, esqueci de avisar, mas ignora aquele gato de rua ali. Só é bom quando tá caladinho tocando piano ou quando a boca tá ocupada cantando.
+		Psstana: Ei!
+		leave --All--
+		jump bar
+	- Já estou ficando cansado, acho que vou embora.
+		[signal arg="mudarBG ruaNoite"]
+		[i]Você anda até sua casa sob a luz do luar, quando você vê já está na cama e dorme com facilidade.
+- Estou um pouco cansado, acho melhor voltar mais cedo.
+	[signal arg="mudarBG ruaNoite"]
+	Jogador: Bom… Seria divertido ir ao bar mas ainda estou um pouco cansado da viagem, voltarei para casa mais cedo hoje.
+	[i]No caminho você se perde observando os arredores e absorvendo tudo à sua volta.
+	[signal arg="mudarBG quarto"]
+	[i]Você entra em casa.
+	Jogador: Acho que poderia ler um pouco antes de dormir.
+	Jogador: Deixa eu ver… Dessa vez vou ler\:
+	- Memórias póstumas de Brás Cobras
+	- Dom Cãosmurro
+	- Quincas Burro
+	Jogador: Que livro mais interessante, o escritor realmente parecia saber o que estava fazendo.
+	[i]O cansaço, tanto do dia atarefado quanto do tempo lendo, começa a pesar seus olhos e o sono começa a chamá-lo.
+	Jogador: Acho que está na hora de ir pra cama.
+	[background arg="res://images/Blackscreen.png" fade="0.0"]
